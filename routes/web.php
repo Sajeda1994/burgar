@@ -1,14 +1,12 @@
 <?php
 
-use App\Http\Controllers\AppetizersController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DrinkController;
 use App\Http\Controllers\MealController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\TableController;
-use App\Models\appetizers;
 use App\Models\category;
-use App\Models\drink;
 use App\Models\meal;
+use App\Models\order;
 use App\Models\table;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -45,21 +43,24 @@ Route::group(
         Route::get('/', function () {
             $categorys=category::all();
             $meals=meal::all();
-            $appets=appetizers::all();
-            $drinks=drink::all();
-            return view('welcome',compact('categorys','meals','appets','drinks'));
+            $macadd=Str::substr(shell_exec('getmac'),159,20);
+            $exorder=order::where('user_mac',$macadd)->with(['meal'])->first();
+            $count=$exorder->meal->count();
+            return view('welcome',compact('categorys','meals','count'));
         });
 
         Route::resource('meal',MealController::class);
-
-        Route::resource('appetizers',AppetizersController::class);
-
-        Route::resource('drink',DrinkController::class);
 
         Route::resource('category', CategoryController::class);
 
         Route::resource('table',TableController::class);
 
+        Route::resource('/order',OrderController::class);
+
+
+        Route::post('/order/create',[OrderController::class,'create']);
+
+        Route::get('/user.order.orderdetailsforuser',[OrderController::class,'getorderdetails']);
 
         Route::get('admindash',function(){
             return view('dashboard.dashboard');
@@ -72,9 +73,7 @@ Route::group(
         Route::get('/allmenu',function(){
             $categorys=category::all();
             $meals=meal::all();
-            $appets=appetizers::all();
-            $drinks=drink::all();
-            return view('landing.allmenu',compact('categorys','meals','appets','drinks'));
+            return view('landing.allmenu',compact('categorys','meals'));
         });
 
         Route::get('/aboutus',function(){
@@ -105,21 +104,19 @@ Route::group(
         Route::get('/pastapage',function(){
             $categorys=category::all();
             $meals=meal::all();
-
             return view('outherpages.pastapage',compact('categorys','meals'));
         });
 
         Route::get('/appetizerspage',function(){
-            $appets=appetizers::all();
             $categorys=category::all();
-            return view('outherpages.appetizerspage',compact('appets','categorys'));
+            $meals=meal::all();
+            return view('outherpages.appetizerspage',compact('categorys','meals'));
         });
 
         Route::get('/drinkspage',function(){
             $categorys=category::all();
-            $drinks=drink::all();
-
-            return view('outherpages.drinkspage',compact('categorys','drinks'));
+            $meals=meal::all();
+            return view('outherpages.drinkspage',compact('categorys','meals'));
         });
 
 

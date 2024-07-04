@@ -101,18 +101,18 @@
               <span class="ml-3 item-text">{{__('trans.Meals')}}</span>
             </a>
           </li>
-          <li class="nav-item dropdown">
-            <a href="{{route('appetizers.index')}}" aria-expanded="false" class="nav-link">
+           <li class="nav-item dropdown">
+            <a href="{{route('order.index')}}" aria-expanded="false" class="nav-link">
               <i class="fe fe-grid fe-16"></i>
-              <span class="ml-3 item-text">{{__('trans.Appetizers')}}</span>
+              <span class="ml-3 item-text">{{__('trans.orders')}}</span>
             </a>
           </li>
-          <li class="nav-item dropdown">
-            <a href="{{route('drink.index')}}"  aria-expanded="false" class=" nav-link">
+        <!--  <li class="nav-item dropdown">
+            <a href="#"  aria-expanded="false" class=" nav-link">
               <i class="fe fe-credit-card fe-16"></i>
               <span class="ml-3 item-text">{{__('trans.Drinks')}}</span>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item dropdown">
             <a href="{{route('table.index')}}"  aria-expanded="false" class="nav-link">
               <i class="fe fe-pie-chart fe-16"></i>

@@ -106,5 +106,12 @@ return[
      'Are you sure?you want delete this book?'=>'هل انت متأكد؟هل تريد حذف الحجز؟',
      'Edit Book Table'=>'تعديل حجز طاوله',
      'Delete Book Table'=>'تعديل حجز طاوله',
+     'Count'=>'العدد',
+     'orders'=>'الطلبات',
+     'UserMac/UserId' => 'رقم المستخدم/عنوان المستخدم',
+     'Total' => 'المجموع',
+     'Final Total'=>'المجموع كامل',
+
+     'ViewrDeatails'=>'عرض التفاصيل',
 
 ];

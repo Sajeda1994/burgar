@@ -27,34 +27,34 @@
 
     </ul>
     <div class="filters-content">
-        @foreach ($appets as $appet)
-            @if($appet->category->name == 'Appetizers' || $appet->category->name == 'مقبلات')
+        @foreach ($meals as $meal)
+            @if($meal->category->name == 'Appetizers' || $meal->category->name == 'مقبلات')
                 <div class="col-4 ">
                     <div class="box ">
                         <div style="background-color:darkgreen;">
                             <div class="img-box bg-secondary">
-                                <img src="{{'\appetphoto/' . $appet->image}}" class="rounded-circle" alt="" srcset="">
+                                <img src="{{'\mealphoto/' . $meal->image}}" class="rounded-circle" alt="" srcset="">
                             </div>
                             <div class="detail-box " style="background-color:darkgreen;">
                                 <h5>
-                                    {{$appet->name}}
+                                    {{$meal->name}}
                                 </h5>
                                 <p>
-                                    {{$appet->description}}
+                                    {{$meal->description}}
                                 </p>
                                 <div class="options">
                                     <h6>
-                                        {{$appet->price}}
+                                        {{$meal->price}}
                                     </h6>
 
                                     <span
-                                        class="badge {{$appet->status == 'available' ? 'text-bg-warning' : 'text-bg-danger'}}">
+                                        class="badge {{$meal->status == 'available' ? 'text-bg-warning' : 'text-bg-danger'}}">
                                         <h6 class="text-dark">
-                                            {{$appet->status}}
+                                            {{$meal->status}}
                                         </h6>
                                     </span>
 
-                                    <a href="">
+                                    <a href="" onclick="order({{$meal->id}})">
                                         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                             viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;"
@@ -124,4 +124,27 @@
         @endforeach
     </div>
 </section>
+
+<script>
+    function order($id) {
+        console.log(id);
+        var qty = $('#Quantity-' + id).val();
+        $.ajax({
+            url: '/order/create',
+            method: "post",
+            data: {
+                m_id: id,
+                qty: qty,
+                _token: "{{@csrf_token()}}"
+            },
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
 @endsection
+

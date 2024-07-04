@@ -26,4 +26,8 @@ class drink extends Model
         return $this->belongsTo(category::class);
     }
 
+    public function order(){
+        return $this->belongsToMany(order::class)->withPivot('Quantity');
+    }
+
 }
