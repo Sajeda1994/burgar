@@ -109,7 +109,7 @@
                            <a class="cart_link" href="/user.order.orderdetailsforuser" >
                                <i  class="fa fa-shopping-cart" style="color:white"></i>
                                     
-                               <span class="badge bg-danger rounded-circle w-5 count" style="position:absolute; top: 10px;; right:40px; ">{{ $count ?? 0 }}</span> 
+                               <span class="badge bg-danger rounded-circle w-5 count" style="position:absolute; top: 13px;; right:-20px; ">{{ $count ?? 0 }}</span> 
                             </a>
                             <form class="form-inline">
                                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
@@ -298,7 +298,7 @@
                                     Pizza Days
                                 </h5>
                                 <h6>
-                                    <span>15%</span> Off
+                                    <span>20%</span> Off
                                 </h6>
                                 <a href="">
                                     Order Now <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
@@ -378,7 +378,7 @@
             </div>
 
             <ul class="filters_menu">
-                <li class="active" data-filter="*" class="text-dark">{{__('trans.All')}}</li>
+                <a href="/"><li class="text-dark">{{__('trans.All')}}</li></a>
                 <a href="/burgerpage"><li  class="text-dark">{{__('trans.Burger')}}</li></a>
                 <a href="/pizzapage"><li  class="text-dark">{{__('trans.Pizza')}}</li></a>
                 <a href="/pastapage"><li  class="text-dark">{{__('trans.Pasta')}}</li></a>

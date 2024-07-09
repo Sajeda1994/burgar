@@ -1,5 +1,5 @@
 <?php
-return [
+return[
     'PASTA & BURGER' => 'PASTA & BURGER',
     'Home' => 'Home',
     'Login' => 'Login',
@@ -112,6 +112,7 @@ return [
     'Total' => 'Total',
     'Final Total'=>'Final Total',
     'ViewrDeatails'=>'ViewrDeatails',
+    'Components'=>'Components',
 
 
 

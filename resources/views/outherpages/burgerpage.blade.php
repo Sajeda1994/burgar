@@ -8,7 +8,7 @@
     </div>
 
     <ul class="filters_menu">
-        <li class="active" data-filter="*" class="text-dark">{{__('trans.All')}}</li>
+    <a href="/"><li class="text-dark">{{__('trans.All')}}</li></a>
         <a href="/burgerpage">
             <li class="text-dark">{{__('trans.Burger')}}</li>
         </a>

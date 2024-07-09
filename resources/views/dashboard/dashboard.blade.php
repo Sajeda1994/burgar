@@ -15,7 +15,7 @@
 
 </head>
 
-<body class="vertical  dark {{App::islocale('ar') ? 'rtl' : ''}}">
+<body class="vertical dark {{App::islocale('ar') ? 'rtl' : ''}} ">
 
   @include('sweetalert::alert')
 
@@ -68,10 +68,8 @@
       </ul>
     </nav>
     <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
-      <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
-        <i class="fe fe-x"><span class="sr-only"></span></i>
-      </a>
-      <nav class="vertnav navbar navbar-light">
+   
+      <nav class="vertnav navbar navbar-light " style="font-size: 20px;">
         <!-- nav bar -->
 
         <ul class="navbar-nav flex-fill w-100 mb-2">
@@ -85,7 +83,7 @@
           </li>
         </ul>
         <p class="text-muted nav-heading mt-4 mb-1">
-          <span>Components</span>
+          <span>{{__('trans.Components')}}</span>
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
           <li class="nav-item dropdown">

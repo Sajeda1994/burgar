@@ -13,10 +13,8 @@ return[
     'In our restaurant we serve fast and delicious food as we have different meals from delicious burgers with French cheese For more browse the meals from here'=>' في مطعمنا نقدم الطعام السريع واللذيذ حيث يوجد لدينا وجبات مختلفه من البرجر الشهي بالجبنه الفرنسيه للمزيد تصفح من هنا',
     'In our restaurant we serve fast and delicious food, as we have different meals from delicious pasta with meat and cheese. For more, browse the meals from here..'=>'في مطعمنا نقدم الطعام السريع واللذيذ حيث يوجد لدينا وجبات مختلفه من البرجر الشهي بالجبنه الفرنسيه للمزيد تصفح من هنا',
      'In our restaurant we serve fast and delicious food as we have different and delicious appetizers For more browse the appetizers from here'=>'في مطعمنا نقدم الطعام السريع والذيذ, حيث يوجد لدينا مقبلات مختلفه وشهيه  للمزيد تصفح المقبلات من هنا',
-,      
      'Browse Burgers'=>'تصفح البرجر',
      'Browse pasta'=>'تصفح المعكرونه',
-
      'Browse Appetizers'=>'تصفح المقبلات',
      'You must Log in to your account Or Register'=>'يجب الدخول الى حسابك او تسجيل حساب',
     'Profile'=>'الملف الشخصي',
@@ -24,7 +22,6 @@ return[
     'Dashboard'=>'لوحة التحكم',
     'Categorys'=>'الاصناف',
     'Category'=>'الصنف',
-
     'Meals'=>'الوجبات',
     'Orders'=>'الطلبات',
     'Name In Arabic'=>'الاسم باللغه العربيه',
@@ -111,7 +108,7 @@ return[
      'UserMac/UserId' => 'رقم المستخدم/عنوان المستخدم',
      'Total' => 'المجموع',
      'Final Total'=>'المجموع كامل',
-
      'ViewrDeatails'=>'عرض التفاصيل',
+     'Components'=>'المحتويات',
 
 ];
